@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.apis_container {
+  display: flex;
+ flex-wrap: wrap; 
+  background-color: #fff;
+}
+
+.fc { background-color: #0063B2FF;}    .sc { background-color: #9CC3D5FF; }
+
+.apis_container > div {
+    
+    flex: 20%;
+    height: 200px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    font-family: monospace;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.Para-Desc
+{
+    height: 75px;
+    margin: 25px 15px;
+    display: flex;
+    align-items: center;
+    font-family: Andale Mono, monospace;
+    font-size: 20px;
+}
+
+
+@media (max-width: 1000px)
+{
+.apis-container > div {
+    flex: 25%;
+}
+}
+
+@media (max-width: 700px)  {
+.apis_container > div {
+    flex: 33%;
+}
+}
+
+@media (max-width: 500px)  {
+.apis_container > div {
+    flex: 60%;
+}
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="Para-Desc">Ajay have worked on these Third party APIs.</div><div class="apis_container" id="apis_container"></div>
+
+
+
+<script>
+var api_names = ["Google Maps", "Mapbox", "Google Analytics", "Hubspot", "Sendgrid", "Remove.bg", "Feedly", "Openweather", "SMSstriker", "Msg91", "Dog",
+"Joe Schmoe"
+];
+
+api_names.forEach(function (item, index) { bgclr_cls="fc";  if(index%2==1) { bgclr_cls="sc"}
+   api = item;  
+   div = document.createElement('div');
+   div.className = bgclr_cls;
+   div.textContent = api
+  console.log(div)
+  document.getElementById('apis_container').appendChild(div);
+});
+
+</script>
+</body>
+</html>
